@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    image: denoslab/toolbox:latest  
+    container_name: toolbox-container
+    environment:
+      - ENV_VAR=value  
+    volumes:
+      - ./data:/app/data  
+    ports:
+      - "9000:9000" 
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
